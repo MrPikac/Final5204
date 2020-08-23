@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <Header />
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+
+  <Footer />
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+  
 
-#nav {
-  padding: 30px;
+window.axios = require('axios');
+export default {
+  name: 'App',
+  components: { 
+    Header, 
+    Footer 
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  data: function() {
+    return {
+            //Comments that are under the table
+            comments: [
+                {
+                  user: 'example',
+                  text: 'lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor',
+                },
+            ]
+        }
+    },
 
-    &.router-link-exact-active {
-      color: #42b983;
+    methods: {
+        submitComment: function(reply) {
+            this.comments.push({
+              text: reply
+            });
+        }
     }
-  }
+};
+</script>
+
+<style lang="scss">
+$color: #CCF0FF;
+body {
+  background-color: $color;
 }
 </style>
