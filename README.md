@@ -1,24 +1,14 @@
-# final
+# Milos Boskovic 111-10740
 
-## Project setup
-```
-npm install
-```
+# kontura-front
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Steps for running the front app
+	1. Run backend part of the app
+	2. Open cmd
+	3. Install vue.js
+	4. Position yourself to the "front" folder
+	5. Run command "npm run serve"
+	6. Open Google Chrome in dev session to avoid CORS Policy issues 
+		->go to Windows Run and enter:"chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security"
+	7. Access the app through the browser by connecting to the designated port
